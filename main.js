@@ -8,9 +8,6 @@ var signinPassword = document.getElementById('signinPassword')
     // to get base url (localhost)
 var pathparts = location.pathname.split('/');
 
-console.log(pathparts);
-console.log('pathparts');
-
 var baseURL = ''
 for (var i = 0; i < pathparts.length - 1; i++) {
     baseURL += '/' + pathparts[i]
@@ -19,6 +16,8 @@ console.log(baseURL);
 console.log('baseURL');
 console.log(location.hostname);
 console.log('location.hostname');
+
+console.log('https://'+location.hostname+'/'+baseURL+'/home.html');
 
 // to say welcome in home page
 var username = localStorage.getItem('sessionUsername')
@@ -128,7 +127,7 @@ function login() {
                 // location.replace('../../home.html')
 
             } else {
-                location.replace(baseURL + '/home.html')
+                location.replace('https://'+location.hostname+'/'+baseURL+'/home.html')
 
             }
         } else {
